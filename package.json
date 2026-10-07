@@ -1,0 +1,36 @@
+{
+	"name": "note-app",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "vite build",
+		"check": "biome check",
+		"check:write": "biome check --write --unsafe",
+		"dev": "vite",
+		"format": "biome format",
+		"format:write": "biome format --write",
+		"lint": "biome lint",
+		"lint:write": "biome lint --write",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.8",
+		"react": "^19.2.8",
+		"react-bootstrap": "^2.10.10",
+		"react-dom": "^19.2.8",
+		"react-router-dom": "^7.18.4",
+		"react-select": "^5.10.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.15",
+		"@types/node": "^24.13.3",
+		"@types/react": "^19.2.18",
+		"@types/react-dom": "^19.2.7",
+		"@vitejs/plugin-react": "^6.1.1",
+		"globals": "^17.12.0",
+		"typescript": "~6.0.2",
+		"typescript-eslint": "^8.69.0",
+		"vite": "^8.3.0"
+	}
+}
