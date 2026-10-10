@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "vite build",
 		"check": "biome check",
-		"check:write": "biome check --write",
+		"check:write": "biome check --write --unsafe",
 		"dev": "vite",
 		"format": "biome format",
 		"format:write": "biome format --write",
