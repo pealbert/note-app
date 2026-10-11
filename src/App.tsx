@@ -4,7 +4,10 @@ import { NewNote } from "./NewNote";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useMemo } from "react";
 import { v4 as uuidV4 } from "uuid";
+import { EditNote } from "./EditNote";
+import { NoteLayout } from "./NoteLayout";
 import { NoteList } from "./NoteList";
+import { NotePage } from "./NotePage";
 import { useLocalStorage } from "./useLocalStorage";
 
 export type Note = {
@@ -53,6 +56,18 @@ function App() {
 		});
 	}
 
+	function onUpdateNote(id: string, { tags, ...data }: NoteData) {
+		setNotes((prevNotes) => {
+			return prevNotes.map((note) => {
+				if (note.id === id) {
+					return { ...note, ...data, tagsIds: tags.map((tag) => tag.id) };
+				} else {
+					return note;
+				}
+			});
+		});
+	}
+
 	function addTag(tag: Tag) {
 		setTags((prev) => [...prev, tag]);
 	}
@@ -74,9 +89,18 @@ function App() {
 					}
 					path="/new"
 				/>
-				<Route path="/:id">
-					<Route element={<h1>Show</h1>} index />
-					<Route element={<h1>Edit</h1>} path="edit" />
+				<Route element={<NoteLayout notes={notesWithTags} />} path="/:id">
+					<Route element={<NotePage />} index />
+					<Route
+						element={
+							<EditNote
+								availableTags={tags}
+								onAddTag={addTag}
+								onSubmit={onUpdateNote}
+							/>
+						}
+						path="edit"
+					/>
 				</Route>
 				<Route element={<Navigate to="/" />} path="*" />
 			</Routes>
