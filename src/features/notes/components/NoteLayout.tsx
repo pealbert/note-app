@@ -4,7 +4,7 @@ import {
 	useOutletContext,
 	useParams,
 } from "react-router-dom";
-import type { Note } from "./App";
+import type { Note } from "../types";
 
 type NoteLayoutProps = {
 	notes: Note[];
@@ -14,7 +14,7 @@ export function NoteLayout({ notes }: NoteLayoutProps) {
 	const { id } = useParams();
 	const note = notes.find((n) => n.id === id);
 
-	if (note === null) return <Navigate replace to="/" />;
+	if (note === undefined) return <Navigate replace to="/" />;
 
 	return <Outlet context={note} />;
 }

@@ -1,0 +1,107 @@
+.page {
+	max-width: 800px;
+	margin-inline: auto;
+}
+
+.backLink {
+	display: inline-flex;
+	margin-bottom: 1.5rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--md-primary);
+	text-decoration: none;
+}
+
+.backLink:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.header {
+	display: flex;
+	gap: 1.5rem;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.title {
+	max-width: 600px;
+	margin: 0 0 0.75rem;
+	font-size: clamp(2rem, 6vw, 2.75rem);
+	font-weight: 400;
+	line-height: 1.15;
+}
+
+.tag {
+	max-width: 180px;
+	padding: 0.3rem 0.5rem;
+	font-size: 0.7rem;
+	font-weight: 500;
+	color: #ffffff;
+	background: #eceff1;
+	border-radius: 4px;
+}
+
+.actions {
+	flex-shrink: 0;
+}
+
+.markdown {
+	max-width: 680px;
+	padding-block: 2rem 3rem;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: var(--md-text);
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+	margin-top: 1.8em;
+	margin-bottom: 0.6em;
+	font-weight: 500;
+	line-height: 1.25;
+}
+
+.markdown h1:first-child,
+.markdown h2:first-child,
+.markdown h3:first-child {
+	margin-top: 0;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+	margin-bottom: 1rem;
+}
+
+.markdown blockquote {
+	padding-left: 1rem;
+	color: var(--md-text-secondary);
+	border-left: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.markdown a {
+	color: var(--md-primary);
+	text-underline-offset: 3px;
+}
+
+.markdown code {
+	padding: 0.15rem 0.3rem;
+	font-size: 0.9em;
+	background: #eeeeee;
+	border-radius: 2px;
+}
+
+@media (max-width: 767.98px) {
+	.header {
+		flex-direction: column;
+	}
+
+	.actions {
+		width: 100%;
+	}
+}
